@@ -1,6 +1,5 @@
 # analyzer.py
 from openai import OpenAI
-import os
 from typing import Dict
 import json
 import streamlit as st
@@ -8,7 +7,7 @@ import streamlit as st
 class EnhancedContentAnalyzer:
     def __init__(self, api_key):
         if not api_key:
-            raise ValueError("Missing OpenAI API Key")
+            raise ValueError("Missing OPENAI_API_KEY")
         self.client = OpenAI(api_key=api_key)
 
     def analyze_content(self, website_data: Dict) -> Dict:
