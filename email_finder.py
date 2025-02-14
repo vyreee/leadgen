@@ -8,7 +8,7 @@ import json
 import os
 
 class EmailFinder:
-    def __init__(self, api_key):
+    def __init__(self, api_key: str):
         self.email_patterns = [
             r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}',
             r'mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}',
