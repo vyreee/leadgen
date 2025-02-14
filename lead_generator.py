@@ -8,11 +8,13 @@ from dotenv import load_dotenv
 import json
 from urllib.parse import quote
 
+# lead_generator.py
 class LeadGenerator:
-    def __init__(self, api_key):
+    def __init__(self, api_key: str):
         if not api_key:
             raise ValueError("Missing Google API Key")
         self.api_key = api_key
+
         
     def generate_leads(self, business_type: str, location: str, radius: int = 20, max_results: int = 25) -> List[Dict]:
         """Generate leads using Google Places API"""
