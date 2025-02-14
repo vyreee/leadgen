@@ -14,29 +14,17 @@ def main():
     # Add API key inputs in sidebar
     st.sidebar.title("API Configuration")
     
-    # Use session state to persist API keys
-    if 'openai_api_key' not in st.session_state:
-        st.session_state.openai_api_key = ''
-    if 'google_api_key' not in st.session_state:
-        st.session_state.google_api_key = ''
-
-    # API key inputs
     openai_api_key = st.sidebar.text_input(
         "OpenAI API Key", 
-        value=st.session_state.openai_api_key,
         type="password",
         help="Get your API key from https://platform.openai.com/api-keys"
     )
+    
     google_api_key = st.sidebar.text_input(
         "Google Places API Key",
-        value=st.session_state.google_api_key,
         type="password",
         help="Get your API key from https://console.cloud.google.com/apis/credentials"
     )
-
-    # Update session state
-    st.session_state.openai_api_key = openai_api_key
-    st.session_state.google_api_key = google_api_key
 
     # Check for API keys
     if not openai_api_key or not google_api_key:
